@@ -6,8 +6,8 @@ BEGIN
 	FROM Human_Meetings 
 	left join Meetings on Human_Meetings.meeting_id = Meetings.meeting_id
 	right join Human on Human_Meetings.human_id = Human.human_id
-	WHERE Human.human_id = NEW.human_id
-	and Meetings.visit_time = new.visit_time
+	WHERE Human.human_id = NEW.Human.human_id
+	and Meetings.visit_time = new.Meetings.visit_time
 	
 	) THEN
         RAISE EXCEPTION 'Tis person already used at this time.';
